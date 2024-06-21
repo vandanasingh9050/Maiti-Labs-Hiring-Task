@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://images.unsplash.com/photo-1512820790803-83ca734da794');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            color: #333;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 800px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: white;
+            background-color: #28a745;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        .book-link {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/books/add" class="btn">Add New Book</a>
+        <h1>All The Books</h1>
+        <ul>
+            <% for(let book of books) { %>
+                <li><a href="/books/<%= book._id %>" class="book-link"><%= book.title %></a></li>
+            <% } %>
+        </ul>
+        <!-- <button onclick="history()">History</button> -->
+    <!-- <button onclick="location.href='/logout'">Logout</button> -->
+    <button 
+    onclick="location.href='/logout'" 
+    style="background-color: #f44336; color: white; padding: 10px 20px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; transition-duration: 0.3s;">
+    Logout
+</button>
+    </div>
+</body>
+</html>
